@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "893741592234",
+    "project_id": "pamd-faeea",
+    "storage_bucket": "pamd-faeea.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893741592234:android:3a1c0a5952f13225f9ead3",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZI7gcpM46xQjEowQ3jYY9rC2yqqTxFtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
