@@ -44,7 +44,7 @@ class NetworkMahasiswaRepository(
         TODO("Not yet implemented")
     }
 
-    override suspend fun deleteMahasiswa(nim: String) {
+    override suspend fun deleteMahasiswa(mahasiswa: Mahasiswa) {
         TODO("Not yet implemented")
     }
 
