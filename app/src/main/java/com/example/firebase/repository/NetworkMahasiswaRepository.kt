@@ -45,7 +45,14 @@ class NetworkMahasiswaRepository(
     }
 
     override suspend fun deleteMahasiswa(mahasiswa: Mahasiswa) {
-        TODO("Not yet implemented")
+        try {
+            firestore.collection("Mahasiswa")
+                .document(mahasiswa.nim)
+                .delete()
+                .await()
+        }catch (e: Exception){
+            throw Exception ("Gagal menghapus data mahasiswa:${e.message}")
+        }
     }
 
     override suspend fun getMahasiswaByNim(nim: String): Flow<Mahasiswa> = callbackFlow {
