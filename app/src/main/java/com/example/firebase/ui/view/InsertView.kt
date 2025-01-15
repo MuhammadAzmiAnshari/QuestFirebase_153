@@ -254,6 +254,35 @@ fun FormMahasiswa(
             placeholder = { Text("Masukkan angkatan") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
-        Text(text = errorState.angkatan ?: "", color = Color.Red)
+        Text(text = errorState.angkatan ?: "", color = Color.Red
+        )
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.dosen,
+            onValueChange = {
+                onValueChange(mahasiswaEvent.copy(dosen = it))
+            },
+            label = { Text("Dosen") },
+            isError = errorState.dosen != null,
+            placeholder = { Text("Masukkan dosen") }
+        )
+        Text(
+            text = errorState.dosen ?: "",
+            color = Color.Red
+        )
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.skripsi,
+            onValueChange = {
+                onValueChange(mahasiswaEvent.copy(skripsi = it))
+            },
+            label = { Text("Skripsi") },
+            isError = errorState.skripsi != null,
+            placeholder = { Text("Masukkan judul skripsi") }
+        )
+        Text(
+            text = errorState.skripsi ?: "",
+            color = Color.Red
+        )
     }
 }

@@ -31,7 +31,10 @@ class InsertViewModel (
             jenisKelamin = if (event.jenisKelamin?.isNotEmpty() == true) null else "Jenis Kelamin tidak boleh kosong",
             alamat = if (event.alamat?.isNotEmpty() == true) null else "Alamat tidak boleh kosong",
             kelas = if (event.kelas?.isNotEmpty() == true) null else "Kelas tidak boleh kosong",
-            angkatan = if (event.angkatan?.isNotEmpty() == true) null else "angkatan tidak boleh kosong"
+            angkatan = if (event.angkatan?.isNotEmpty() == true) null else "angkatan tidak boleh kosong",
+            dosen = if (event.dosen?.isNotEmpty() == true) null else "dosen tidak boleh kosong",
+            skripsi = if (event.skripsi?.isNotEmpty() == true) null else "Judul skripsi tidak boleh kosong",
+
         )
         uiEvent = uiEvent.copy(isEntryValid = errorState)
         return errorState.isValid()
@@ -79,11 +82,14 @@ data class FormErrorState(
     val jenisKelamin: String? = null,
     val alamat: String? = null,
     val kelas: String? = null,
-    val angkatan: String? = null
+    val angkatan: String? = null,
+    val dosen: String? = null,
+    val skripsi: String? = null
 ) {
     fun isValid(): Boolean {
         return nim == null && nama == null && jenisKelamin == null &&
-                alamat == null && kelas == null && angkatan == null
+                alamat == null && kelas == null && angkatan == null &&
+                dosen == null && skripsi == null
     }
 }
 //data class variabel yang menyimpan data input form
@@ -93,7 +99,9 @@ data class MahasiswaEvent(
     val alamat: String? = "",
     val jenisKelamin: String? = "",
     val kelas: String? = "",
-    val angkatan: String? = ""
+    val angkatan: String? = "",
+    val dosen: String? = "",
+    val skripsi: String? = ""
 )
 // Menyimpan input form kedalam entity
 fun MahasiswaEvent.toMhsModel() : Mahasiswa = Mahasiswa(
@@ -102,5 +110,7 @@ fun MahasiswaEvent.toMhsModel() : Mahasiswa = Mahasiswa(
     alamat = alamat,
     jenisKelamin = jenisKelamin,
     kelas = kelas,
-    angkatan = angkatan
+    angkatan = angkatan,
+    dosen = dosen,
+    skripsi = skripsi
 )
